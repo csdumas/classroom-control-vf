@@ -45,6 +45,7 @@ node default {
   notify { "Hello y'all, my name is ${::hostname}": }
   include examples::fundamentals
   include users
+  include skeletons
   
 #file { '/etc/motd':
 #  ensure => file,
