@@ -45,11 +45,17 @@ node default {
   notify { "Hello y'all, my name is ${::hostname}": }
   include examples::fundamentals
   
-file { '/etc/motd':
-  ensure => file,
-  owner => 'root',
-  group => 'root',
-  mode => '0644',
-  content => "I learned to manage states using Puppet.\n",
-  }
+#file { '/etc/motd':
+#  ensure => file,
+#  owner => 'root',
+#  group => 'root',
+#  mode => '0644',
+#  content => "I learned to manage states using Puppet.\n",
+#  }
+
+exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+path => '/usr/bin:/usr/local/bin',
+creates => '/etc/motd',
+}
+
 }
