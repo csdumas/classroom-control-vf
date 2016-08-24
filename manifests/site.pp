@@ -53,9 +53,9 @@ node default {
 #  content => "I learned to manage states using Puppet.\n",
 #  }
 
-exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
-path => '/usr/bin:/usr/local/bin',
-creates => '/etc/motd',
-}
+ exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+     path    => '/usr/bin:/usr/local/bin',
+     creates => '/etc/motd',
+ }
 
 }
