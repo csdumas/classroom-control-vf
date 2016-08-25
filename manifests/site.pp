@@ -55,7 +55,7 @@ if $::virtual != 'physical' {
   }
 #}
   include nginx
-  include admins
+  #include admins
   
 #file { '/etc/motd':
 #  ensure => file,
