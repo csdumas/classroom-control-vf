@@ -42,11 +42,18 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
+  
   notify { "Hello y'all, my name is ${::hostname}": }
-  include examples::fundamentals
-  include users
-  include skeleton
-  include memcached
+  #include examples::fundamentals
+  #include users
+  #include skeleton
+  #include memcached
+  
+if $::virtual != 'physical' {
+  $vmname = capitalize($::virtual)
+  notify { "This is a ${vmname} virtual machine.": }
+  }
+}
   include nginx
   
 #file { '/etc/motd':
