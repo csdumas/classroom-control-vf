@@ -58,6 +58,9 @@ node default {
   #include skeleton
   #include memcached
   include wrappers::epel
+  include nginx
+  nginx::vhost { 'csdumas.puppetlabs.vm': }
+  
   
 if $::virtual != 'physical' {
   $vmname = capitalize($::virtual)
