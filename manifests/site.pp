@@ -45,7 +45,7 @@ node default {
   
    $message = hiera('message')
      notify { $message: }
-   }
+
   
   notify { "Hello y'all, my name is ${::hostname}": }
   #include examples::fundamentals
@@ -74,4 +74,4 @@ if $::virtual != 'physical' {
      creates => '/etc/motd',
  }
 
-#}
+}
