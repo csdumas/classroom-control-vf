@@ -47,7 +47,7 @@ node default {
      notify { $message: }
    }
   
-  #notify { "Hello y'all, my name is ${::hostname}": }
+  notify { "Hello y'all, my name is ${::hostname}": }
   #include examples::fundamentals
   #include users
   #include skeleton
