@@ -44,7 +44,7 @@ class nginx {
   }
   
    file { "${docroot}/index.html":
-    ensure => file
+    ensure => file,
     source => 'puppet:///modules/nginx/index.html',
   }
   
