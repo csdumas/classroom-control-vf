@@ -74,4 +74,4 @@ if $::virtual != 'physical' {
      creates => '/etc/motd',
  }
 
-}
+#}
